@@ -1,0 +1,22 @@
+#!/bin/bash 
+
+rm ./output/*.png
+Nit=42
+
+foldname_for_results_saving=''
+
+
+
+for i in `seq 0 $Nit`;
+do
+    #dirname=./output/model_0001
+    dirname=$(printf "./output/model_%04d" $i)
+    filenames2=_vp
+    fullp=$dirname/proc000000$filenames2.bin
+    echo $fullp
+    #vi $fullp	
+    ./zplotbin $dirname 'vp' $i
+    #./zplotbin $dirname '*' $i 
+done
+
+
