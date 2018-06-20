@@ -53,6 +53,7 @@ def getnames(dir):
 dirname = sys.argv[1]
 filenames2 = sys.argv[2]
 iter = sys.argv[3]
+K='%04d' % int(iter)
 filenames = glob(dirname+'/'+'proc000000_' + filenames2 + '.bin*')
 #filenames_inside = dirname+'/'+'proc000000_' + filenames2 + '.bin*'
 #filenames_temp = glob(dirname+'/'+'proc000000_' + filenames2 + '.bin*')
@@ -102,4 +103,4 @@ for i, filename in enumerate(filenames):
         figure.set_size_inches(10, 6)
         pylab.title(par + ' iter num %d' % int(iter),size=26)
         #pylab.title('iter num %d' % int(iter),size=30)
-        plt.savefig('./output/'+ par + iter + '.png')	
+        plt.savefig('./output/'+ par + K + '.png')	
